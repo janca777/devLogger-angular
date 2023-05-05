@@ -1,0 +1,13 @@
+<div class="card card-body mb-3">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text"
+        [(ngModel)]="text"
+        [ngModelOptions]="{standalone: true}"
+        class="form-control"
+        placeholder="Add a log here...">
+    </div>
+    <input type="submit" class="btn btn-light" value="Add log" [disabled]="!this.text"/>
+    <button type="button" class="btn btn-warning" [hidden]="!this.text" (click)="clearTextinput()">Clear</button>
+  </form>
+</div>
